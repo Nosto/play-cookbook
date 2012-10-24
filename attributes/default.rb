@@ -1,0 +1,8 @@
+default['play']['dir'] = "/opt/play"
+default['play']['version'] = "1.2.3"
+default['play']['checksum'] = "f8981ebc1398b261e99ac622574a2091cc255e524cb30a62ab79bdbaa9002fa8"
+default['play']['base_url'] = "http://download.playframework.org/releases"
+default['play']['user'] = "play"
+default['play']['group'] = "play"
+default['play']['home'] = "/srv/play"
+default['play']['git_url'] = "git://github.com/playframework/play.git"
