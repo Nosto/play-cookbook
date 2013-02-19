@@ -1,7 +1,7 @@
 Description
 ===========
 
-Installs `play` framework from binary or source
+Installs `play` framework from binary or source (tested with 1.x versions). 
 
 Requirements
 ============
