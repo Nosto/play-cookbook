@@ -30,7 +30,7 @@ directory node['play']['dir'] do
 end
 
 remote_file "#{Chef::Config['file_cache_path']}/play-#{node['play']['version']}.zip" do
-  source "#{node['play']['base_url']}/play-#{node['play']['version']}.zip"
+  source "#{node['play']['base_url']}/#{node['play']['version']}/play-#{node['play']['version']}.zip"
   checksum node['play']['checksum']
   action :create_if_missing
 end
