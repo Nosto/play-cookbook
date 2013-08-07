@@ -1,6 +1,6 @@
 default['play']['dir'] = "/opt/play"
-default['play']['version'] = "1.2.5"
-default['play']['checksum'] = "f8981ebc1398b261e99ac622574a2091cc255e524cb30a62ab79bdbaa9002fa8"
+default['play']['version'] = "1.2.6"
+default['play']['checksum'] = "1c48944fdc7975a5a0a09d9166cef4e0aa63c5b07d52f5fa683a70a4387e6c05"
 default['play']['base_url'] = "http://download.playframework.org/releases"
 default['play']['user'] = "play"
 default['play']['group'] = "play"
