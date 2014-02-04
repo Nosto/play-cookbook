@@ -2,7 +2,7 @@
 # Cookbook Name:: play
 # Recipe:: source
 #
-# Copyright 2012, Nosto Solutions Ltd
+# Copyright 2014, Nosto Solutions Ltd
 # Authors:
 #       Jani Luostarinen <jani.luostarinen@nosto.com>
 #
