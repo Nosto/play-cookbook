@@ -24,21 +24,27 @@ include_recipe "play::user"
 
 package "unzip"
 
-directory node['play']['dir'] do
-  recursive true
-  action :delete
-end
-
 remote_file "#{Chef::Config['file_cache_path']}/play-#{node['play']['version']}.zip" do
-  source "#{node['play']['base_url']}/#{node['play']['version']}/play-#{node['play']['version']}.zip"
-  checksum node['play']['checksum']
-  action :create_if_missing
+  source      "#{node['play']['base_url']}/play-#{node['play']['version']}.zip"
+  checksum    node['play']['checksum']
+  owner       'root'
+  group       'root'
+  mode        0644
+  action      :create_if_missing
 end
 
-bash "install_play" do
+directory node['play']['dir'] do
+  recursive   true
+  action      :delete
+  notifies    :run, "bash[play-install]", :immediately
+  not_if      { ::File.exists?("#{node['play']['dir']}/framework/play-#{node['play']['version']}.jar") }
+end
+
+bash 'play-install' do
   cwd Chef::Config['file_cache_path']
   code <<-EOH
-    unzip -q play-#{node['play']['version']}.zip
-    mv play-#{node['play']['version']} #{node['play']['dir']}
+  unzip -nq play-#{node['play']['version']}.zip
+  mv play-#{node['play']['version']} #{node['play']['dir']}
   EOH
+  action :run
 end
