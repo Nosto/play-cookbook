@@ -47,7 +47,7 @@ This recipe installs `play` framework from source using git.
 user
 -------
 
-Adds user and group for `play`. Included in default and source recipes. 
+Adds user and group for `play`. Included in default and source recipes.
 
 
 License and Author
@@ -55,7 +55,7 @@ License and Author
 
 Author:: Jani Luostarinen (<jani.luostarinen@nosto.com>)
 
-Copyright:: 2012, Nosto Solutions, Ltd
+Copyright:: 2014, Nosto Solutions, Ltd
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
