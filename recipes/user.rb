@@ -20,31 +20,31 @@
 #
 
 group node['play']['group'] do
-  group_name node['play']['group']
-  system true
+  group_name  node['play']['group']
+  system      true
 end
 
 user node['play']['user'] do
-  username node['play']['user']
-  gid "#{node['play']['group']}"
-  comment "Play Framework"
-  system true
-  home node['play']['home']
-  shell "/bin/false"
+  username  node['play']['user']
+  gid       node['play']['group']
+  comment   "Play Framework"
+  system    true
+  home      node['play']['home']
+  shell     "/bin/false"
 end
 
 directory node['play']['home'] do
-  owner node['play']['user']
-  group node['play']['group']
-  mode "0777"
-  action :create
+  owner     node['play']['user']
+  group     node['play']['group']
+  mode      0755
+  action    :create
   recursive true
 end
 
 template "/etc/profile.d/play.sh" do
-  source "profile.d.play.erb"
-  owner "root"
-  group "root"
-  mode 0644
+  source    "profile.d.play.erb"
+  owner     "root"
+  group     "root"
+  mode      0644
   variables(:play_dir => node['play']['dir'])
 end
