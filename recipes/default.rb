@@ -37,7 +37,6 @@ directory node['play']['dir'] do
   recursive   true
   action      :delete
   notifies    :run, "bash[play-install]", :immediately
-  not_if      { ::File.exists?("#{node['play']['dir']}/framework/play-#{node['play']['version']}.jar") }
 end
 
 bash 'play-install' do
