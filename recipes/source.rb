@@ -27,23 +27,25 @@ include_recipe "play::user"
 package "ant"
 
 directory node['play']['dir'] do
-  recursive true
-  action :create
+  owner       "root"
+  group       "root"
+  mode        00755
+  recursive   true
+  action      :create
 end
 
 git node['play']['dir'] do
-  repository node['play']['git_url']
-  revision node['play']['version']
-  action :sync
-  depth 10
+  repository  node['play']['git_url']
+  revision    node['play']['version']
+  action      :sync
+  depth       10
+  notifies    :run, "bash[play-install]", :immediately
 end
 
-script "install_play" do
-  interpreter "bash"
-  cwd "#{node['play']['dir']}/framework"
+bash 'play-install' do
+  cwd         "#{node['play']['dir']}/framework"
   code <<-EOH
-  ant
+  ant jar
   EOH
+  action      :run
 end
-
-
