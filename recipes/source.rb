@@ -19,9 +19,9 @@
 # limitations under the License.
 #
 
-include_recipe "git"
-include_recipe "build-essential"
-include_recipe "java"
+include_recipe "git::default"
+include_recipe "build-essential::default"
+include_recipe "java::default"
 include_recipe "play::user"
 
 package "ant"

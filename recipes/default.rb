@@ -19,7 +19,7 @@
 # limitations under the License.
 #
 
-include_recipe "java"
+include_recipe "java::default"
 include_recipe "play::user"
 
 package "unzip"
