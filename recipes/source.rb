@@ -39,7 +39,6 @@ git node['play']['dir'] do
   revision    node['play']['version']
   action      :sync
   depth       10
-  notifies    :run, "bash[play-install]", :immediately
 end
 
 bash 'play-install' do
