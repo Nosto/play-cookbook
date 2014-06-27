@@ -11,5 +11,3 @@ recipe "play::source", "Installs play from source"
 recipe "play::user", "Adds play user & group"
 
 depends "java"
-depends "git"
-depends "build-essential"
