@@ -1,7 +1,7 @@
 ## play::default
-default['play']['version'] = "1.2.6"
+default['play']['version'] = "1.2.7"
 default['play']['dir'] = "/opt/play"
-default['play']['checksum'] = "1c48944fdc7975a5a0a09d9166cef4e0aa63c5b07d52f5fa683a70a4387e6c05"
+default['play']['checksum'] = "b063d2d511955e07ff5ef64472a2a465aa2f267a8df73903552ba951995272fa"
 default['play']['base_url'] = "http://downloads.typesafe.com/play/#{node['play']['version']}"
 
 ## play::user
