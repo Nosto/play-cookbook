@@ -33,20 +33,17 @@ remote_file "#{Chef::Config['file_cache_path']}/play-#{node['play']['version']}.
   action      :create_if_missing
 end
 
+directory node['play']['dir'] do
+  recursive   true
+  action      :delete
+  notifies    :run, "bash[play-install]", :immediately
+end
+
 bash 'play-install' do
   cwd Chef::Config['file_cache_path']
   code <<-EOH
   unzip -nq play-#{node['play']['version']}.zip
-  mv play-#{node['play']['version']} #{node['play']['dir']}-#{node['play']['version']}
+  mv play1-#{node['play']['version']} #{node['play']['dir']}
   EOH
   action :run
-  not_if { Dir.exists? "#{node['play']['dir']}-#{node['play']['version']}" }
-end
-
-link node['play']['dir'] do
-  action :delete
-end
-
-link node['play']['dir'] do
-  to "#{node['play']['dir']}-#{node['play']['version']}"
 end
