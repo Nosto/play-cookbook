@@ -43,7 +43,7 @@ bash 'play-install' do
   cwd Chef::Config['file_cache_path']
   code <<-EOH
   unzip -nq play-#{node['play']['version']}.zip
-  mv play1-#{node['play']['version']} #{node['play']['dir']}
+  mv play-#{node['play']['version']} #{node['play']['dir']}
   EOH
   action :run
 end
