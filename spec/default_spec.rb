@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'play::default' do
 
   let(:dir)       { '/opt/play' }
-  let(:version)   { '1.2.6' }
+  let(:version)   { '1.3.1' }
 
   let(:chef_run) {
     chef_run = ChefSpec::Runner.new(platform: 'ubuntu', version: '12.04')
